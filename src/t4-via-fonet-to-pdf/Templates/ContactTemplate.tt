@@ -1,0 +1,96 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter name="Data" type="t4_via_fonet_to_pdf.Models.Card" #>
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="simple"
+                  page-height="10cm"
+                  page-width="20cm"
+                  margin-top="1cm"
+                  margin-bottom="1cm"
+                  margin-left="1cm"
+                  margin-right="1cm">
+      <fo:region-body margin-top="1cm"/>
+      <fo:region-before extent="1cm"/>
+      <fo:region-after extent="1cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-reference="simple">
+    <fo:flow flow-name="xsl-region-body" font-size="18pt" color="black" font-family="Helvetica">
+      
+      <fo:table table-layout="fixed" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)"/>
+        <fo:table-column column-width="proportional-column-width(1)"/>
+        <fo:table-body>
+          <!-- Name -->
+          <fo:table-row>
+            <fo:table-cell column-number="1">
+              <fo:block font-weight="bold">Name:</fo:block>
+            </fo:table-cell>
+            <fo:table-cell column-number="2">
+              <fo:block>
+                <#= this.Data.FirstName #> <#= this.Data.LastName #>
+              </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+
+          <!-- Birthdate -->
+          <fo:table-row>
+            <fo:table-cell column-number="1">
+              <fo:block font-weight="bold">Birth date:</fo:block>
+            </fo:table-cell>
+            <fo:table-cell column-number="2">
+              <fo:block>
+                <#= this.Data.Birthdate #>
+              </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+
+          <!-- Phone numbers, if any -->
+		  <# if ((this.Data.Phones != null) && (this.Data.Phones.Any()))
+		  {
+			  foreach (var phone in this.Data.Phones)
+			  { #>
+					<fo:table-row>
+					  <fo:table-cell column-number="1">
+						  <fo:block font-weight="bold"><#= phone.Type.ToString()  + " phone:"#></fo:block>
+					  </fo:table-cell>
+					  <fo:table-cell column-number="2">
+						  <fo:block>
+							<#= phone.Number#>
+						  </fo:block>
+					  </fo:table-cell>
+					</fo:table-row>
+			  <# } 
+		  } #>
+    
+          <!-- Email addresses, if any -->
+          <# if ((this.Data.Emails != null) && (this.Data.Emails.Any()))
+          {
+          foreach (var email in this.Data.Emails)
+          { #>
+          <fo:table-row>
+            <fo:table-cell column-number="1">
+              <fo:block font-weight="bold">
+                <#= email.Type.ToString()  + " email:"#>
+              </fo:block>
+            </fo:table-cell>
+            <fo:table-cell column-number="2">
+              <fo:block>
+                <#= email.Address#>
+              </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <# } 
+		  } #>
+          
+        </fo:table-body>
+      </fo:table>      
+      
+    </fo:flow>
+  </fo:page-sequence>
+
+</fo:root>
