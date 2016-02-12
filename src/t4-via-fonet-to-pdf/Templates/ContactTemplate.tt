@@ -6,15 +6,15 @@
 
   <fo:layout-master-set>
     <fo:simple-page-master master-name="simple"
-                  page-height="29.7cm"
-                  page-width="21cm"
+                  page-height="10cm"
+                  page-width="20cm"
                   margin-top="1cm"
-                  margin-bottom="2cm"
-                  margin-left="2.5cm"
-                  margin-right="2.5cm">
-      <fo:region-body margin-top="3cm"/>
-      <fo:region-before extent="3cm"/>
-      <fo:region-after extent="1.5cm"/>
+                  margin-bottom="1cm"
+                  margin-left="1cm"
+                  margin-right="1cm">
+      <fo:region-body margin-top="1cm"/>
+      <fo:region-before extent="1cm"/>
+      <fo:region-after extent="1cm"/>
     </fo:simple-page-master>
   </fo:layout-master-set>
 

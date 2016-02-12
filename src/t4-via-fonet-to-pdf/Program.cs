@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Fonet;
+using t4_via_fonet_to_pdf.Engines;
 
 namespace t4_via_fonet_to_pdf
 {
@@ -29,41 +26,11 @@ namespace t4_via_fonet_to_pdf
             };
 
 
-            var template = new Templates.ContactTemplate();
-            template.Session = new Dictionary<string, object>();
-            template.Session["Data"] = data;
-            template.Initialize();
-
-            var s = template.TransformText();
-
-            var outputStream = new System.IO.MemoryStream();
-            FonetDriver driver = FonetDriver.Make();
-            driver.CloseOnExit = false;
-            driver.Options = new Fonet.Render.Pdf.PdfRendererOptions
-            {
-                Author = "Mr. Smith",
-                Title = "How to create a PDF file using C#, T4 templates and Fo.Net.",
-                Subject = "Crazy stuff",
-                EnableModify = false,
-                EnableAdd = false,
-                EnableCopy = false,
-                EnablePrinting = true,
-                OwnerPassword = "password",
-            };
-
-            using (var reader = new System.IO.StringReader(s))
-            {
-                driver.Render(reader, outputStream);
-            }
-
-            outputStream.Position = 0;
             using (var fileStream = System.IO.File.Create("c:/temp/test.pdf"))
             {
-                outputStream.CopyTo(fileStream);
+                new CardGenerationEngine().CreatePdf(data, fileStream);
             }
-                
 
-            Console.WriteLine(s);
         }
     }
 }

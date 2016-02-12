@@ -16,7 +16,7 @@ namespace t4_via_fonet_to_pdf.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+    #line 1 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class ContactTemplate : ContactTemplateBase
     {
@@ -31,15 +31,15 @@ namespace t4_via_fonet_to_pdf.Templates
 
   <fo:layout-master-set>
     <fo:simple-page-master master-name=""simple""
-                  page-height=""29.7cm""
-                  page-width=""21cm""
+                  page-height=""10cm""
+                  page-width=""20cm""
                   margin-top=""1cm""
-                  margin-bottom=""2cm""
-                  margin-left=""2.5cm""
-                  margin-right=""2.5cm"">
-      <fo:region-body margin-top=""3cm""/>
-      <fo:region-before extent=""3cm""/>
-      <fo:region-after extent=""1.5cm""/>
+                  margin-bottom=""1cm""
+                  margin-left=""1cm""
+                  margin-right=""1cm"">
+      <fo:region-body margin-top=""1cm""/>
+      <fo:region-before extent=""1cm""/>
+      <fo:region-after extent=""1cm""/>
     </fo:simple-page-master>
   </fo:layout-master-set>
 
@@ -59,14 +59,14 @@ namespace t4_via_fonet_to_pdf.Templates
               <fo:block>
                 ");
             
-            #line 35 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 35 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Data.FirstName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 35 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 35 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Data.LastName));
             
             #line default
@@ -85,7 +85,7 @@ namespace t4_via_fonet_to_pdf.Templates
               <fo:block>
                 ");
             
-            #line 47 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 47 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Data.Birthdate));
             
             #line default
@@ -93,7 +93,7 @@ namespace t4_via_fonet_to_pdf.Templates
             this.Write("\r\n              </fo:block>\r\n            </fo:table-cell>\r\n          </fo:table-r" +
                     "ow>\r\n\r\n          <!-- Phone numbers, if any -->\r\n\t\t  ");
             
-            #line 53 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 53 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
  if ((this.Data.Phones != null) && (this.Data.Phones.Any()))
 		  {
 			  foreach (var phone in this.Data.Phones)
@@ -104,7 +104,7 @@ namespace t4_via_fonet_to_pdf.Templates
             this.Write("\t\t\t\t\t<fo:table-row>\r\n\t\t\t\t\t  <fo:table-cell column-number=\"1\">\r\n\t\t\t\t\t\t  <fo:block " +
                     "font-weight=\"bold\">");
             
-            #line 59 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 59 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(phone.Type.ToString()  + " phone:"));
             
             #line default
@@ -112,14 +112,14 @@ namespace t4_via_fonet_to_pdf.Templates
             this.Write("</fo:block>\r\n\t\t\t\t\t  </fo:table-cell>\r\n\t\t\t\t\t  <fo:table-cell column-number=\"2\">\r\n\t" +
                     "\t\t\t\t\t  <fo:block>\r\n\t\t\t\t\t\t\t");
             
-            #line 63 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 63 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(phone.Number));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t\t\t\t  </fo:block>\r\n\t\t\t\t\t  </fo:table-cell>\r\n\t\t\t\t\t</fo:table-row>\r\n\t\t\t  ");
             
-            #line 67 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 67 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
  } 
 		  } 
             
@@ -127,7 +127,7 @@ namespace t4_via_fonet_to_pdf.Templates
             #line hidden
             this.Write("    \r\n          <!-- Email addresses, if any -->\r\n          ");
             
-            #line 71 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 71 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
  if ((this.Data.Emails != null) && (this.Data.Emails.Any()))
           {
           foreach (var email in this.Data.Emails)
@@ -138,7 +138,7 @@ namespace t4_via_fonet_to_pdf.Templates
             this.Write("          <fo:table-row>\r\n            <fo:table-cell column-number=\"1\">\r\n        " +
                     "      <fo:block font-weight=\"bold\">\r\n                ");
             
-            #line 78 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 78 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(email.Type.ToString()  + " email:"));
             
             #line default
@@ -146,7 +146,7 @@ namespace t4_via_fonet_to_pdf.Templates
             this.Write("\r\n              </fo:block>\r\n            </fo:table-cell>\r\n            <fo:table-" +
                     "cell column-number=\"2\">\r\n              <fo:block>\r\n                ");
             
-            #line 83 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 83 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(email.Address));
             
             #line default
@@ -154,7 +154,7 @@ namespace t4_via_fonet_to_pdf.Templates
             this.Write("\r\n              </fo:block>\r\n            </fo:table-cell>\r\n          </fo:table-r" +
                     "ow>\r\n          ");
             
-            #line 87 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+            #line 87 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
  } 
 		  } 
             
@@ -165,7 +165,7 @@ namespace t4_via_fonet_to_pdf.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\src\t4-via-fonet-to-pdf\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
+        #line 1 "C:\src\SANDBOX-t4-via-fonet-to-pdf\src\t4-via-fonet-to-pdf\Templates\ContactTemplate.tt"
 
 private global::t4_via_fonet_to_pdf.Models.Card _DataField;
 
